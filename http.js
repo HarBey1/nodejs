@@ -1,4 +1,4 @@
-const http = require('http')
+/*const http = require('http')
 
 const server = http.createServer((req,res)=>{
     //console.log(req);
@@ -12,4 +12,11 @@ const server = http.createServer((req,res)=>{
     <p> we can't find the page you are looking for</p>
     <a href= "/"> back home</a>`)
 })
-server.listen(2000)
+server.listen(2000)*/
+
+const http = require('http')
+
+http.createServer((req,res)=>{
+    res.writeHead(200, {'content-type':'text/plain'});
+    res.end(req.url);
+}).listen(8001);
